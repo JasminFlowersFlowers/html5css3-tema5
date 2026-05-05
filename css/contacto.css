@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap');
+
+#main-contacto {
+    background: url("../imgs/fondoForm.jpg") no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 1px;
+}
+
+#contenedorFormulario {
+    position: relative;
+    display: inline-block;
+    margin: 50px;
+    width: 600px;
+    padding: 20px 50px;
+    background-color: rgba(200, 200, 200, 0.7);
+    text-align: left;
+    box-shadow: 3px 0px 8px rgba(0, 0, 0, 0.4);
+}
+
+#tituloForm {
+    position: absolute;
+    top: -16px;
+    left: 490px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family: 'Aguafina Script', cursive;
+    font-style: italic;
+    color: #333;
+    letter-spacing: 5px;
+    text-shadow: 0px 0px 2px #777;
+    margin: 0;
+    padding: 0 10px;
+    white-space: nowrap;
+}
+
+/* --- SECCIÓN ACTUALIZADA --- */
+.input-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#formularioContacto input,
+#formularioContacto textarea {
+    display: inline-block;
+    /* Borde más suave y transparente como en la imagen */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* Fondo semitransparente para que se vea el logo detrás */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Sombra interna (inset) para dar profundidad */
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3),
+        inset 0px 0px 40px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-weight: bold;
+    padding: 1px 4px 1px 45px;
+    transition: all 0.4s ease-in;
+}
+
+#nombre,
+#correo {
+    height: 32px;
+    width: 330px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+#nombre {
+    background-image: url("../imgs/icon-nombre.png");
+}
+
+#correo {
+    background-image: url("../imgs/icon-correo.png");
+}
+
+/* Foco y Validación */
+#nombre:focus,
+#correo:focus,
+#mensaje:focus {
+    /* Mantenemos la transparencia en el foco */
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 12px white;
+    outline: none;
+}
+
+#nombre:focus,
+#correo:focus {
+    width: 370px;
+}
+
+#nombre:focus:valid,
+#correo:focus:valid {
+    background-image: url("../imgs/icon-nombre.png"), url("../imgs/valid.png");
+    background-position: 10px center, 390px center;
+}
+
+#nombre:focus:invalid,
+#correo:focus:invalid {
+    background-image: url("../imgs/icon-nombre.png"), url("../imgs/invalid.png");
+    background-position: 10px center, 390px center;
+}
+
+/* Asterisco */
+.req::after {
+    content: " *";
+    color: #444;
+    /* Un poco más oscuro para que resalte en el fondo gris */
+    font-weight: bold;
+    position: absolute;
+    margin-left: 10px;
+    line-height: 32px;
+}
+
+/* Mensaje */
+#mensaje {
+    font-family: Arial;
+    font-size: 1em;
+    width: 95%;
+    /* Ajustado para que ocupe casi todo el ancho como en la foto */
+    height: 150px;
+    background-image: url("../imgs/icon-mensaje.png");
+    background-repeat: no-repeat;
+    background-position: 10px 15px;
+    resize: none;
+}
+
+/* Botón */
+#btnEnviar {
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: 1px solid #434343;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #5e5e5e, #2a2a2a);
+    box-shadow: inset 0px 1px 1px #353535;
+}
+
+#btnEnviar:hover {
+    background: linear-gradient(to top, #5e5e5e, #2a2a2a);
+}
+
+/* =========================
+   EJERCICIO 3 - LOGO ROTANDO
+   ========================= */
+
+@keyframes rotarLogo {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@-webkit-keyframes rotarLogo {
+    0% {
+        -webkit-transform: rotateY(0deg);
+    }
+
+    50% {
+        -webkit-transform: rotateY(180deg);
+    }
+
+    100% {
+        -webkit-transform: rotateY(0deg);
+    }
+}
+
+@-moz-keyframes rotarLogo {
+    0% {
+        -moz-transform: rotateY(0deg);
+    }
+
+    50% {
+        -moz-transform: rotateY(180deg);
+    }
+
+    100% {
+        -moz-transform: rotateY(0deg);
+    }
+}
+
+@-o-keyframes rotarLogo {
+    0% {
+        -o-transform: rotateY(0deg);
+    }
+
+    50% {
+        -o-transform: rotateY(180deg);
+    }
+
+    100% {
+        -o-transform: rotateY(0deg);
+    }
+}
+/* aplica al logo */
+header img {
+    animation: rotarLogo 5s infinite linear;
+    -webkit-animation: rotarLogo 5s infinite linear;
+    -moz-animation: rotarLogo 5s infinite linear;
+    -o-animation: rotarLogo 5s infinite linear;
+}
